@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "amzon-2" {
-  ami           = ami-01cc34ab2709337aa
+  ami           = "ami-00fb94167edbaf821"
   instance_type = var.instance_type
 
   tags = {
