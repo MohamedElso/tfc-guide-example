@@ -2,19 +2,8 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-2.0.20211005.0-x86_64-gp2"]
-  }
-
-  owners = ["amazon"] # Canonical
-}
-
 resource "aws_instance" "amzon-2" {
-  ami           = data.aws_ami.amazon_linux.id
+  ami           = "ami-01cc34ab2709337aa"
   instance_type = var.instance_type
 
   tags = {
